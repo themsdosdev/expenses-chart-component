@@ -1,0 +1,179 @@
+/** @format */
+
+@use "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$Cream;
+  font-family: variables.$font-family;
+  font-size: variables.$font-size;
+}
+
+.main-container {
+  width: 344px;
+  margin: 68px auto;
+
+  @media only screen and (min-width: 600px) {
+    width: 540px;
+  }
+}
+
+.balance {
+  background-color: variables.$Soft-red;
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  color: variables.$Very-pale-orange;
+  margin-bottom: 16px;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 0.7em;
+    margin-bottom: 6px;
+  }
+  &__total {
+    font-size: 1.4em;
+    font-weight: variables.$font-weight-bold;
+  }
+
+  &__logo {
+    width: 60px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    height: 126px;
+
+    &__title {
+      font-size: 1em;
+      margin-bottom: 12px;
+    }
+    &__total {
+      font-size: 1.8em;
+    }
+    &__logo {
+      width: 75px;
+    }
+  }
+}
+
+.chart{
+  background-color: variables.$Very-pale-orange;
+  color: variables.$Medium-brown;
+  border-radius: 16px;
+  height: 424px;
+  padding: 28px 20px;
+  &__title{
+      font-size: 1.25em;
+      color: variables.$Dark-brown;
+  }
+  &__bars-container{
+      height: 220px;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      margin-bottom: 30px;
+  }
+  
+  &__bar{
+      width: 32px;
+      border-radius: 4px;
+      height: 200px;
+      background-color: variables.$Soft-red;
+      position: relative;
+      &:hover{
+          cursor: pointer;
+          filter: brightness(1.2);
+      }
+      &--label{
+          display: none;
+          position: absolute;
+          top: -24px;
+          left: -4px;
+          width: 38px;
+          text-align: center;
+          font-size: 0.5em;
+          background-color: variables.$Dark-brown;
+          color: variables.$Very-pale-orange;
+          padding: 4px;
+          border-radius: 4px;
+          font-weight: 700;
+      }       
+      &--day{
+          position: absolute;
+          bottom: -16px;
+          font-size: 0.6em;
+          width: 32px;
+          text-align: center;
+      } 
+  }
+  &__analitics{
+      border-top: 2px solid variables.$Cream;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 24px;
+      font-size: 0.7em;
+  }
+  &__total{        
+      margin-bottom: 8px;
+  }
+  &__total-value{
+      color: variables.$Dark-brown;
+      font-weight: 700;
+      font-size: 1.4em;
+  }
+  &__porcentage{
+      color: variables.$Dark-brown;
+      font-weight: 700;
+      text-align: right;
+      margin-top: 18px;
+  }
+  @media (min-width: 600px){
+      height: 512px;
+      padding: 44px;
+      &__bars-container{
+          margin-bottom: 50px;
+      }
+      &__title{
+          font-size: 2em;
+      }
+      &__bar{
+          width: 50px;
+          &--label{
+              width: 54px;
+              font-size: 0.7em;
+              top: -32px;
+              left: -2px;
+          }
+          &--day{
+              width: 54px;
+              bottom: -24px;
+              font-size: 0.8em;
+          }
+      }
+      &__analitics{
+          padding-top: 32px;
+          font-size: 0.9em;
+      }
+      &__total-value{
+          font-size: 2.4em;
+      }
+      &__porcentage{
+          margin-top: 30px;
+      }
+  }
+}
+
+/* --------------------(Footer)------------------------*/
+.attribution {
+  font-size: 1em;
+  text-align: center;
+}
+.attribution a {
+  color: variables.$blue;
+  text-decoration: none;
+}
